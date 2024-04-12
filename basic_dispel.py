@@ -29,8 +29,9 @@ def check_correct(guess: str,
                   already_ans: list,
                   half_ans_list: list) -> int:
     with open(f'./{folder}/{file_name}') as f:
-        lines = f.readlines()
-        skill_from = file_name.split(".")[0]
+        lines: list = f.readlines()
+        skill_from: str = file_name.split(".")[0]
+        print(type(lines), type(skill_from))
         with open('new_table.txt', 'a+') as new_f:
             for line in lines:
                 if guess.strip() == line.strip() and num_line in already_ans:
